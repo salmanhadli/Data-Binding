@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="person"
+            type="com.example.databinding.Person" />
+        
+        <variable
+            name="clickHandler"
+            type="com.example.databinding.MainActivity.MainActivityClickHandlers" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/personName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="204dp"
+            android:text="@{person.name}"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/personEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{person.email}"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personName"
+            app:layout_constraintVertical_bias="0.179" />
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:text="Say Hello"
+            android:onClick="@{clickHandler::onBtn1Click}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personEmail" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
+            android:text="Say Bye"
+            android:onClick="@{clickHandler::onBtn2Click}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
