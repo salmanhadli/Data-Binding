@@ -26,17 +26,17 @@ public class MainActivity extends AppCompatActivity {
 //        personName = findViewById(R.id.personName);
 
         // TextView
-        Person person1 = new Person("Salman Hadli", "skh174211@gmail.com");
+        Person person = new Person("Salman Hadli", "skh174211@gmail.com");
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        activityMainBinding.setPerson(person1);
+        activityMainBinding.setPerson(person);
 
         // Binding the Handler
         mainActivityClickHandlers = new MainActivityClickHandlers(this);
         activityMainBinding.setClickHandler(mainActivityClickHandlers);
 
 
-//        personName.setText(person1.getName().toString());
-//        personEmail.setText(person1.getEmail().toString());
+//        personName.setText(person.getName().toString());
+//        personEmail.setText(person.getEmail().toString());
 
 //        Button b1 = findViewById(R.id.btn1);
 //        Button b2 = findViewById(R.id.btn2);

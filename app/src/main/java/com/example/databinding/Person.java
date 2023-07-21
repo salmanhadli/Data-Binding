@@ -1,23 +1,28 @@
 package com.example.databinding;
 
-public class Person {
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+import androidx.databinding.library.baseAdapters.BR;
+
+public class Person extends BaseObservable {
     private String name;
     private String email;
 
-    public Person() {
-    }
+//    public Person() {
+//    }
 
     public Person(String name, String email) {
         this.name = name;
         this.email = email;
     }
-
+    @Bindable
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+        notifyPropertyChanged(BR.name);
     }
 
     public String getEmail() {
